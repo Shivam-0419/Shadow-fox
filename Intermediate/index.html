@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Super Kings | Premium Fan Portal</title>
+    <meta name="description" content="The ultimate fan portal for Chennai Super Kings (CSK). Get live simulated scores, match schedules, player stats, interactive polls, and share your support on the Whistle Podu Fan Wall!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area" id="nav-logo-btn">
+                <div class="logo-wrapper">
+                    <img src="assets/logo.png" alt="CSK Lion Logo" class="brand-logo">
+                </div>
+                <div class="brand-name-group">
+                    <span class="brand-title">CHENNAI SUPER KINGS</span>
+                    <span class="brand-subtitle">OFFICIAL FAN HUB</span>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            
+            <!-- Main Navigation Links -->
+            <nav class="nav-bar" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active" data-tab="home"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="#squad" class="nav-link" data-tab="squad"><i class="fa-solid fa-users"></i> Roster</a></li>
+                    <li class="nav-item"><a href="#matches" class="nav-link" data-tab="matches"><i class="fa-solid fa-calendar-days"></i> Matches</a></li>
+                    <li class="nav-item"><a href="#stats" class="nav-link" data-tab="stats"><i class="fa-solid fa-chart-simple"></i> Stats</a></li>
+                    <li class="nav-item"><a href="#fan-zone" class="nav-link" data-tab="fan-zone"><i class="fa-solid fa-comments"></i> Fan Zone</a></li>
+                    <li class="nav-item"><a href="#news" class="nav-link" data-tab="news"><i class="fa-solid fa-newspaper"></i> News</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Social Handles & CTAs -->
+            <div class="header-actions">
+                <a href="https://twitter.com/ChennaiIPL" target="_blank" class="social-icon-btn" aria-label="CSK Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://instagram.com/chennaiipl" target="_blank" class="social-icon-btn" aria-label="CSK Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/user/chennaisuperkings" target="_blank" class="social-icon-btn" aria-label="CSK YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <button class="whistle-nav-btn" id="nav-whistle-btn">
+                    <i class="fa-solid fa-bullhorn whistle-shake"></i>
+                    <span>Whistle</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container (SPA Layout) -->
+    <main class="content-container">
+        
+        <!-- ================= HOME / HERO SECTION ================= -->
+        <section id="home" class="tab-content active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-crown"></i> 5-TIME IPL CHAMPIONS</span>
+                    <h1 class="hero-title">THE ROAR IS BACK</h1>
+                    <p class="hero-desc">Welcome to the central fortress of the Yellow Army. Keep up with live matches, explore player statistics, and join millions of fans blowing whistles across the globe!</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#squad" class="btn btn-primary nav-trigger" data-target="squad"><i class="fa-solid fa-users"></i> Explore Squad</a>
+                        <a href="#fan-zone" class="btn btn-secondary nav-trigger" data-target="fan-zone"><i class="fa-solid fa-volume-high"></i> Join Fan Wall</a>
+                    </div>
+                </div>
+                
+                <!-- Interactive Whistle Widget -->
+                <div class="hero-whistle-card glass-panel">
+                    <div class="whistle-glow"></div>
+                    <div class="whistle-icon-box">
+                        <i class="fa-solid fa-bullhorn pulse-animation"></i>
+                    </div>
+                    <h3 class="whistle-card-title">WHISTLE PODU!</h3>
+                    <p class="whistle-card-desc">Blow the golden whistle to show your support for Chennai Super Kings!</p>
+                    <div class="whistle-counter-box">
+                        <span class="whistle-counter-label">TOTAL WHISTLES BLOWN</span>
+                        <div class="whistle-number" id="whistle-counter-display">1,245,680</div>
+                    </div>
+                    <button class="btn btn-whistle-big" id="blow-whistle-btn">
+                        <i class="fa-solid fa-volume-high"></i> BLOW WHISTLE
+                    </button>
+                </div>
+            </div>
+
+            <!-- Live Match Center Card -->
+            <div class="live-match-section">
+                <div class="section-header-centered">
+                    <h2 class="section-title-sm"><i class="fa-solid fa-circle-dot pulse-dot"></i> MATCH CENTER</h2>
+                </div>
+                
+                <div class="match-center-grid">
+                    <!-- Live Scoreboard -->
+                    <div class="live-scorecard-card glass-panel highlight-border">
+                        <div class="scorecard-header">
+                            <span class="match-badge" id="match-status-badge">SIMULATED LIVE MATCH</span>
+                            <span class="match-venue"><i class="fa-solid fa-location-dot"></i> M. A. Chidambaram Stadium, Chepauk</span>
+                        </div>
+                        
+                        <div class="scorecard-body">
+                            <div class="team-score-row">
+                                <div class="team-info">
+                                    <div class="team-initials csk-color">CSK</div>
+                                    <span class="team-name">Chennai Super Kings</span>
+                                </div>
+                                <div class="team-score">
+                                    <span class="score-runs" id="csk-score">188/4</span>
+                                    <span class="score-overs" id="csk-overs">(18.2 Ov)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="scorecard-versus">VS</div>
+                            
+                            <div class="team-score-row">
+                                <div class="team-info">
+                                    <div class="team-initials mi-color">MI</div>
+                                    <span class="team-name">Mumbai Indians</span>
+                                </div>
+                                <div class="team-score">
+                                    <span class="score-runs" id="opponent-score">184/8</span>
+                                    <span class="score-overs" id="opponent-overs">(20 Ov)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scorecard-footer">
+                            <p class="match-equation" id="match-equation-text">CSK needs 17 runs in 10 balls to win.</p>
+                            <div class="batsmen-bowler-summary">
+                                <div class="player-stat-bubble">
+                                    <span class="stat-lbl">Batter</span>
+                                    <span class="stat-val" id="current-batsman">Shivam Dube 48*(22)</span>
+                                </div>
+                                <div class="player-stat-bubble">
+                                    <span class="stat-lbl">Bowler</span>
+                                    <span class="stat-val" id="current-bowler">Jasprit Bumrah 1/34</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Commentary -->
+                    <div class="live-commentary-card glass-panel">
+                        <div class="commentary-header">
+                            <h3><i class="fa-solid fa-microphone-lines"></i> BALL-BY-BALL FEED</h3>
+                            <div class="simulation-controls">
+                                <span class="sim-speed-lbl">Simulating Live</span>
+                                <div class="pulsing-indicator"></div>
+                            </div>
+                        </div>
+                        <div class="commentary-body" id="commentary-feed-container">
+                            <!-- Populated by JavaScript -->
+                            <div class="commentary-row highlight-comm">
+                                <span class="ball-number">18.2</span>
+                                <span class="commentary-text"><strong>SIX!</strong> Dube launches it! A massive hit over deep mid-wicket. Chepauk erupts in joy! Whistles are echoing!</span>
+                            </div>
+                            <div class="commentary-row">
+                                <span class="ball-number">18.1</span>
+                                <span class="commentary-text">Bumrah bowls a searing yorker. Dube squeezes it away to deep cover for a tight double. Outstanding running!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SQUAD ROSTER SECTION ================= -->
+        <section id="squad" class="tab-content">
+            <div class="section-heading-area">
+                <span class="section-tag">MEET THE HEROES</span>
+                <h2 class="section-title">THE SQUAD</h2>
+                <p class="section-subtitle">The warriors wearing yellow, ready to lay everything on the line at Chepauk and beyond.</p>
+            </div>
+            
+            <!-- Category Tabs -->
+            <div class="squad-filters-wrapper">
+                <div class="squad-filters">
+                    <button class="filter-btn active" data-filter="all">All Players</button>
+                    <button class="filter-btn" data-filter="batsman">Batsmen</button>
+                    <button class="filter-btn" data-filter="allrounder">All-Rounders</button>
+                    <button class="filter-btn" data-filter="bowler">Bowlers</button>
+                </div>
+            </div>
+            
+            <!-- Roster Grid -->
+            <div class="roster-grid" id="roster-container">
+                <!-- Squad data is generated in JS for highly responsive data models, but here's the layout skeleton -->
+            </div>
+        </section>
+
+
+        <!-- ================= MATCHES / SCHEDULE SECTION ================= -->
+        <section id="matches" class="tab-content">
+            <div class="section-heading-area">
+                <span class="section-tag">BATTLE PLANS</span>
+                <h2 class="section-title">MATCHES & SCHEDULE</h2>
+                <p class="section-subtitle">Track CSK's campaigns, mark your calendars for upcoming fixtures, and review glorious victories.</p>
+            </div>
+            
+            <!-- Schedule Filter Tab -->
+            <div class="matches-filter-wrapper">
+                <div class="matches-filters glass-panel">
+                    <button class="match-filter-btn active" data-match-filter="all">All Matches</button>
+                    <button class="match-filter-btn" data-match-filter="upcoming">Upcoming</button>
+                    <button class="match-filter-btn" data-match-filter="past">Results</button>
+                </div>
+            </div>
+            
+            <!-- Matches Timeline -->
+            <div class="matches-timeline" id="matches-timeline-container">
+                <!-- Managed in app.js -->
+            </div>
+        </section>
+
+
+        <!-- ================= STATISTICS SECTION ================= -->
+        <section id="stats" class="tab-content">
+            <div class="section-heading-area">
+                <span class="section-tag">BY THE NUMBERS</span>
+                <h2 class="section-title">TEAM STATS & HISTORIC RECORDS</h2>
+                <p class="section-subtitle">Delve into the outstanding historical achievements that make Chennai Super Kings one of the most successful franchises in IPL history.</p>
+            </div>
+            
+            <div class="stats-dashboard-grid">
+                <!-- Historical Trophies Panel -->
+                <div class="stats-panel-lg glass-panel highlight-border">
+                    <h3 class="panel-title"><i class="fa-solid fa-trophy csk-color"></i> CHAMPIONSHIP DOMINANCE</h3>
+                    
+                    <div class="trophy-counters-grid">
+                        <div class="trophy-counter-card">
+                            <div class="trophy-icon-wrapper gold-glow">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <span class="trophy-count">5</span>
+                            <span class="trophy-name">IPL Championships</span>
+                            <span class="trophy-years">2010, 2011, 2018, 2021, 2023</span>
+                        </div>
+                        
+                        <div class="trophy-counter-card">
+                            <div class="trophy-icon-wrapper blue-glow">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <span class="trophy-count">2</span>
+                            <span class="trophy-name">Champions League Trophies</span>
+                            <span class="trophy-years">2010, 2014</span>
+                        </div>
+                        
+                        <div class="trophy-counter-card">
+                            <div class="trophy-icon-wrapper yellow-glow">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <span class="trophy-count">12</span>
+                            <span class="trophy-name">Playoff Appearances</span>
+                            <span class="trophy-years">Record IPL Appearances</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Performance Statistics -->
+                <div class="stats-panel-sm glass-panel">
+                    <h3 class="panel-title"><i class="fa-solid fa-chart-line"></i> HISTORIC RUN LEADERS</h3>
+                    <div class="chart-container">
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Suresh Raina (Mr. IPL)</span>
+                                <span class="chart-player-val">5,528 Runs</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill yellow-gradient" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">MS Dhoni</span>
+                                <span class="chart-player-val">4,957+ Runs</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill yellow-gradient" style="width: 89.6%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Faf du Plessis</span>
+                                <span class="chart-player-val">2,932 Runs</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill yellow-gradient" style="width: 53.0%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Ruturaj Gaikwad</span>
+                                <span class="chart-player-val">2,500+ Runs</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill yellow-gradient" style="width: 45.2%;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Bowling Statistics -->
+                <div class="stats-panel-sm glass-panel">
+                    <h3 class="panel-title"><i class="fa-solid fa-bowling-ball"></i> HISTORIC WICKET TAKERS</h3>
+                    <div class="chart-container">
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Dwayne Bravo</span>
+                                <span class="chart-player-val">154 Wickets</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill blue-gradient" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Ravindra Jadeja</span>
+                                <span class="chart-player-val">130+ Wickets</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill blue-gradient" style="width: 84.4%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Albie Morkel</span>
+                                <span class="chart-player-val">91 Wickets</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill blue-gradient" style="width: 59.1%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="chart-item">
+                            <div class="chart-item-labels">
+                                <span class="chart-player-name">Ravichandran Ashwin</span>
+                                <span class="chart-player-val">90 Wickets</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill blue-gradient" style="width: 58.4%;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= FAN ZONE SECTION ================= -->
+        <section id="fan-zone" class="tab-content">
+            <div class="section-heading-area">
+                <span class="section-tag">YELLOW ARMY NATION</span>
+                <h2 class="section-title">THE FAN HUB</h2>
+                <p class="section-subtitle">Make your voice heard! Vote in real-time polls, see how other fans are cheering, and post your shout-outs on our Whistle Podu Wall!</p>
+            </div>
+            
+            <div class="fan-zone-grid">
+                
+                <!-- Interactive Fan Poll -->
+                <div class="fan-poll-card glass-panel highlight-border">
+                    <h3 class="poll-title"><i class="fa-solid fa-square-poll-vertical"></i> LIVE WEEKLY POLL</h3>
+                    <p class="poll-question" id="poll-question-text">Who will be CSK's top runs scorer in the next match at Chepauk?</p>
+                    
+                    <div class="poll-options-container" id="poll-options-box">
+                        <!-- Filled by Javascript, handles voting clicks -->
+                        <button class="poll-option-btn" data-option="ruturaj">
+                            <span class="option-name">Ruturaj Gaikwad</span>
+                            <span class="option-percentage">0%</span>
+                            <div class="option-bg-progress"></div>
+                        </button>
+                        <button class="poll-option-btn" data-option="dube">
+                            <span class="option-name">Shivam Dube</span>
+                            <span class="option-percentage">0%</span>
+                            <div class="option-bg-progress"></div>
+                        </button>
+                        <button class="poll-option-btn" data-option="dhoni">
+                            <span class="option-name">MS Dhoni</span>
+                            <span class="option-percentage">0%</span>
+                            <div class="option-bg-progress"></div>
+                        </button>
+                        <button class="poll-option-btn" data-option="rachin">
+                            <span class="option-name">Rachin Ravindra</span>
+                            <span class="option-percentage">0%</span>
+                            <div class="option-bg-progress"></div>
+                        </button>
+                    </div>
+                    
+                    <div class="poll-footer">
+                        <span class="total-votes-label" id="poll-votes-display"><i class="fa-solid fa-check-double"></i> 2,450 votes cast</span>
+                        <button class="btn-text" id="reset-vote-btn">Reset My Vote</button>
+                    </div>
+                </div>
+                
+                <!-- Whistle Wall / Board -->
+                <div class="whistle-wall-card glass-panel">
+                    <div class="wall-header">
+                        <h3><i class="fa-solid fa-pen-nib csk-color"></i> WHISTLE PODU WALL</h3>
+                        <p>Write your cheers and post them live on our community scoreboard! Keep it clean, keep it loud!</p>
+                    </div>
+                    
+                    <!-- Write Message Form -->
+                    <form id="fan-wall-form" class="fan-form">
+                        <div class="form-row-double">
+                            <div class="form-group">
+                                <label for="fan-name">Your Name</label>
+                                <input type="text" id="fan-name" maxlength="25" placeholder="e.g. DhoniFan7" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fan-badge">Pick A Badge</label>
+                                <select id="fan-badge">
+                                    <option value="🦁">🦁 CSK Lion</option>
+                                    <option value="🏏">🏏 Cricket Bat</option>
+                                    <option value="💛">💛 Yellow Heart</option>
+                                    <option value="⚡">⚡ Thunder</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fan-msg">Your Message</label>
+                            <textarea id="fan-msg" rows="2" maxlength="140" placeholder="Type your cheer! (max 140 chars)..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> POST CHEER</button>
+                    </form>
+                    
+                    <!-- Messages Feed Container -->
+                    <div class="wall-feed" id="fan-wall-feed">
+                        <!-- Populated by JavaScript and local storage -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= NEWS SECTION ================= -->
+        <section id="news" class="tab-content">
+            <div class="section-heading-area">
+                <span class="section-tag">LATEST STORIES</span>
+                <h2 class="section-title">THE NEWSROOM</h2>
+                <p class="section-subtitle">Stay up to date with match previews, press briefings, and training highlights directly from the CSK camp.</p>
+            </div>
+            
+            <div class="news-grid" id="news-container">
+                <!-- News cards rendered in app.js for structural integrity -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Detailed Player Stats Modal -->
+    <div class="modal-overlay" id="player-modal">
+        <div class="modal-card glass-panel">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close details modal">&times;</button>
+            <div class="modal-body" id="modal-content-area">
+                <!-- Filled dynamically by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Whistle Podu Audio Sound & Overlay Effect -->
+    <div id="whistle-visual-effect">
+        <div class="effect-wave"></div>
+        <div class="effect-wave"></div>
+        <div class="effect-text">WHISTLE PODU! 🦁</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-group">
+                    <img src="assets/logo.png" alt="CSK Lion Logo" class="footer-logo">
+                    <div>
+                        <span class="footer-title">CHENNAI SUPER KINGS</span>
+                        <span class="footer-subtitle">FANS PORTAL</span>
+                    </div>
+                </div>
+                <p class="footer-desc">An immersive, premium fan portal celebrating the legacy, records, and future of the Chennai Super Kings. Powered by the Yellow Army, dedicated to whistle-blowers worldwide.</p>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-link-col">
+                    <h4>PORTAL NAV</h4>
+                    <ul>
+                        <li><a href="#home" class="nav-trigger" data-target="home">Home</a></li>
+                        <li><a href="#squad" class="nav-trigger" data-target="squad">Squad Roster</a></li>
+                        <li><a href="#matches" class="nav-trigger" data-target="matches">Schedules</a></li>
+                        <li><a href="#stats" class="nav-trigger" data-target="stats">Historic Stats</a></li>
+                        <li><a href="#fan-zone" class="nav-trigger" data-target="fan-zone">Fan Zone</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-link-col">
+                    <h4>OFFICIAL LINKS</h4>
+                    <ul>
+                        <li><a href="https://www.chennaisuperkings.com/" target="_blank">Official Website</a></li>
+                        <li><a href="https://www.chennaisuperkings.com/shop" target="_blank">CSK Super Store</a></li>
+                        <li><a href="https://www.iplt20.com/" target="_blank">IPL T20 Official</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Chennai Super Kings Fan Portal. Developed with 💛 for the Yellow Army. Designed for demonstrative fan engagement.</p>
+            <div class="footer-legal">
+                <span>Designed & Developed by Antigravity AI</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+</html>
