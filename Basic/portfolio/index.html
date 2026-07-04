@@ -1,1 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- =================================================================
+         [EDIT HERE: SEO & TITLE]
+         Customize the page title and meta description for search engines.
+         ================================================================= -->
+    <title>Personal Portfolio </title>
+    <meta name="description" content="Explore my personal portfolio, college projects, achievements, and hobbies.">
 
+    <!-- Fonts: Outfit (Heading/Futuristic) and Inter (Body/Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Core Style sheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Mouse-Interactive Particle Starfield Background -->
+    <canvas id="cosmic-particles"></canvas>
+
+    <!-- Glowing Background Ambient Spheres -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- =================================================================
+         HEADER & FLOATING NAVIGATION
+         ================================================================= -->
+    <header class="header">
+        <div class="nav-container">
+            <!-- =================================================================
+                 [EDIT HERE: BRAND/LOGO]
+                 Replace 'PORTFOLIO.' or add your initials
+                 ================================================================= -->
+            <a href="#home" class="logo">
+                <span class="logo-glow">SHIVAM</span>.DEV
+            </a>
+            
+            <nav class="navbar">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================
+             1. HERO / LANDING SECTION
+             ================================================================= -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-rocket"></i> Welcome to my space</span>
+                    
+                    <!-- =================================================================
+                         [EDIT HERE: YOUR NAME]
+                         Replace 'Alex Mercer' with your full name.
+                         ================================================================= -->
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-gradient">SHIVAM TIWARI</span>
+                    </h1>
+
+                    <!-- Dynamic Auto-Typing Role Title (Configured in script.js) -->
+                    <h2 class="hero-subtitle">
+                        I am a <span class="typing-text text-glow"></span>
+                    </h2>
+
+                    <!-- =================================================================
+                         [EDIT HERE: HERO SUBTEXT]
+                         Write a short, engaging one-liner that describes your passion.
+                         ================================================================= -->
+                    <p class="hero-description">
+                        An ambitious computer science student designing beautiful, highly-functional digital experiences that merge premium technology with interactive visuals.
+                    </p>
+
+                    <div class="hero-cta-buttons">
+                        <a href="#contact" class="btn btn-primary btn-glow">
+                            <span>Get In Touch</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Premium Glass Profile Sphere with glowing rotating borders -->
+                    <div class="avatar-glow-ring"></div>
+                    <div class="avatar-card glass-card">
+                        <!-- =================================================================
+                             [EDIT HERE: PROFILE PICTURE]
+                             You can replace this source with a link to your real picture 
+                             (e.g., a LinkedIn photo or github avatar link, e.g. https://github.com/yourusername.png)
+                             ================================================================= -->
+                        <div class="avatar-image">
+                            <img src="https://github.com/Shivam-0419.png" alt="Profile Picture">
+                            <!-- <i class="fa-solid fa-user-astronaut astronaut-placeholder"></i> -->
+                        </div>
+                        <div class="avatar-stats">
+                            <div class="stat-item">
+                                <span class="stat-num text-gradient">CS</span>
+                                <span class="stat-lbl">Student</span>
+                            </div>
+                            <div class="stat-line"></div>
+                            <div class="stat-item">
+                                <span class="stat-num text-gradient">0</span>
+                                <span class="stat-lbl">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About Section">
+                <span class="mouse-wheel"></span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </section>
+
+
+        <!-- =================================================================
+             2. ABOUT ME & INFO SECTION
+             ================================================================= -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Discovery</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-column glass-card">
+                        <h3 class="card-gradient-title"><i class="fa-regular fa-compass"></i> My Journey</h3>
+                        
+                        <!-- =================================================================
+                             [EDIT HERE: PERSONAL BIOGRAPHY]
+                             Write a paragraph detailing your personality, drive, and tech journey.
+                             ================================================================= -->
+                        <p class="about-bio">
+                            I am a highly motivated technologist currently pursuing my academics. My passion lies in understanding how modern web tech stacks function and integrating them with interactive layouts. I believe standard web designs are a thing of the past—websites should be active spaces of interaction, animated storytelling, and immersive textures.
+                        </p>
+                        
+                        <p class="about-bio">
+                            When I'm not studying or debugging code, you can find me experimenting with new technologies, designing graphic assets, or reading about futuristic developments in automation and software architecture.
+                        </p>
+
+                        <!-- Social Icons Grid -->
+                        <div class="social-links-row">
+                            <!-- =================================================================
+                                 [EDIT HERE: SOCIAL NETWORKS]
+                                 Replace '#' with your actual links (GitHub, LinkedIn, Instagram, etc.)
+                                 ================================================================= -->
+                            <a href="https://www.linkedin.com/in/shivam-tiwari-2a3a91342 " target="_blank" class="social-circle-btn" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Shivam-0419" target="_blank" class="social-circle-btn" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <!-- <a href="#" target="_blank" class="social-circle-btn" aria-label="Twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a> -->
+                            <!-- <a href="#" target="_blank" class="social-circle-btn" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <!-- Personal Information Quick Grid Cards -->
+                    <div class="about-cards-column">
+                        
+                        <!-- =================================================================
+                             [EDIT HERE: COLLEGE / UNIVERSITY]
+                             Modify the values inside 'info-value' with your college name.
+                             ================================================================= -->
+                        <div class="info-metric-card glass-card">
+                            <div class="card-icon cyan-glow-bg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="card-details">
+                                <span class="info-label">College / University</span>
+                                <h4 class="info-value">GURU JAMBHESHWAR UNIVERSITY OF SCIENCE AND TECHNOLOGY</h4>
+                            </div>
+                        </div>
+
+                        <!-- =================================================================
+                             [EDIT HERE: DEGREE / COURSE]
+                             Modify the values with your major, department, or degree details.
+                             ================================================================= -->
+                        <div class="info-metric-card glass-card">
+                            <div class="card-icon purple-glow-bg">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div class="card-details">
+                                <span class="info-label">Degree / Course</span>
+                                <h4 class="info-value">B.Tech in Computer Science & Engineering</h4>
+                            </div>
+                        </div>
+
+                        <!-- =================================================================
+                             [EDIT HERE: HOBBIES / INTERESTS]
+                             Update with your primary hobbies or what keeps you active.
+                             ================================================================= -->
+                        <div class="info-metric-card glass-card">
+                            <div class="card-icon cyan-glow-bg">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <div class="card-details">
+                                <span class="info-label">Hobbies & Interests</span>
+                                <h4 class="info-value">Generative Art, Sci-fi Novels, UI Designing</h4>
+                            </div>
+                        </div>
+
+                        <!-- =================================================================
+                             [EDIT HERE: CURRENT LOCATION]
+                             Specify your location (City, State, Country).
+                             ================================================================= -->
+                        <div class="info-metric-card glass-card">
+                            <div class="card-icon purple-glow-bg">
+                                <i class="fa-solid fa-earth-asia"></i>
+                            </div>
+                            <div class="card-details">
+                                <span class="info-label">Current Location</span>
+                                <h4 class="info-value">Hisar, Haryana, INDIA</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             3. SKILLS GRID
+             ================================================================= -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Superpowers</span>
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- =================================================================
+                     [EDIT HERE: SKILLS & RATINGS]
+                     You can change the skill names, icons, or visual percentage sizes below.
+                     ================================================================= -->
+                <div class="skills-grid">
+                    
+                    <!-- Skill Card 1 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-brands fa-html5 skill-icon html-color"></i>
+                            <h3 class="skill-title">HTML5 & CSS3</h3>
+                        </div>
+                        <p class="skill-description">Structuring accessible websites with stunning, semantic layout structures and dynamic responsive layouts.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-brands fa-js skill-icon js-color"></i>
+                            <h3 class="skill-title">JavaScript (ES6+)</h3>
+                        </div>
+                        <p class="skill-description">Building core client side logic, object-oriented canvas drawing systems, and customized visual interaction.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-brands fa-react skill-icon react-color"></i>
+                            <h3 class="skill-title">Modern Frameworks</h3>
+                        </div>
+                        <p class="skill-description">Developing high-speed, single-page web applications utilizing React.js, Tailwind, or Vue layouts.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-bezier-curve skill-icon design-color"></i>
+                            <h3 class="skill-title">UI / UX Design</h3>
+                        </div>
+                        <p class="skill-description">Designing user interfaces, micro-interactions, responsive wireframes, and vector mockups in Figma.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-database skill-icon db-color"></i>
+                            <h3 class="skill-title">Database Systems</h3>
+                        </div>
+                        <p class="skill-description">Designing relational databases, managing queries, and optimizing indexes using SQL and NoSQL engines.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6 -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-head">
+                            <i class="fa-brands fa-git-alt skill-icon git-color"></i>
+                            <h3 class="skill-title">Git & Collaboration</h3>
+                        </div>
+                        <p class="skill-description">Managing version history, branch controls, continuous deployment workflows, and open-source integrations.</p>
+                        <div class="skill-bar-wrapper">
+                            <div class="skill-bar-header">
+                                <span>Mastery</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill fill-glow" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             4. TIMELINE / EDUCATION SECTION
+             ================================================================= -->
+        <section id="timeline" class="timeline-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Chronology</span>
+                    <h2 class="section-title">Academic & Project Timeline</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Vertical Glowing Timeline -->
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+
+                    <!-- =================================================================
+                         [EDIT HERE: TIMELINE ITEM 1 - COLLEGE / ACADEMICS]
+                         ================================================================= -->
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-node"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2023 - Present</span>
+                            <h3 class="timeline-title text-gradient">Guru Jambheshwar University Of Science And Technology</h3>
+                            <h4 class="timeline-subtitle">Bachelor of Technology in Computer Science</h4>
+                            <p class="timeline-desc">
+                                Pursuing a rigorous program focused on algorithms, software architecture, databases, and advanced programming. Maintained a 3.8 GPA. Currently serving as the lead developer for the institute's tech club.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- =================================================================
+                         [EDIT HERE: TIMELINE ITEM 2 - HACKATHONS / PROJECTS]
+                         ================================================================= -->
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-node"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2025-OCTOBER</span>
+                            <h3 class="timeline-title text-gradient">Smart India Hackathon-University level Qualified</h3>
+                            <h4 class="timeline-subtitle">Innovation Challenge in AI & Web Tech</h4>
+                            <p class="timeline-desc">
+                                Collaborated with a team of four to design a cloud-based energy grid monitoring interface. Managed front-end operations, implemented interactive real-time visual charts, and was awarded "Best UI Presentation" out of 100+ competing entries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- =================================================================
+                         [EDIT HERE: TIMELINE ITEM 3 - Senior Secondary SCHOOL]
+                         ================================================================= -->
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-node"><i class="fa-solid fa-school"></i></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2023 - 2024</span>
+                            <h3 class="timeline-title text-gradient">Senior Secondary School</h3>
+                            <h4 class="timeline-subtitle">Vigyan Sanjivani Central College</h4>
+                            <p class="timeline-desc">
+                                Specialized in Physics, Chemistry, Mathematics, and Computer Science. Graduated with Honors and completed introductory coding modules in Python and web structures.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             5. PROJECTS SECTION
+             ================================================================= -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Exhibition</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    
+                    <!-- =================================================================
+                         [EDIT HERE: PROJECT CARD 1]
+                         Modify titles, details, technology tags, and link destinations.
+                         ================================================================= -->
+                    <!-- <article class="project-card glass-card">
+                        <div class="project-image-box"> -->
+                            <!-- Visual Graphic Overlay Texture -->
+                            <!-- <div class="project-overlay-gradient"></div>
+                            <div class="project-icon-placeholder cyan-glow-bg">
+                                <i class="fa-solid fa-cloud-moon"></i>
+                            </div>
+                            <div class="project-badge">Active</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Cosmos Dashboard</h3>
+                            <p class="project-desc">
+                                A high-performance spatial dashboard utilizing interactive charts to display celestial movement data and environmental factors. Includes a gorgeous dark-theme interface with reactive filters.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">Vanilla CSS</span>
+                                <span class="project-tag">Charts.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <a href="#" class="project-link-btn primary-glow-text" target="_blank">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article> -->
+
+                    <!-- =================================================================
+                         [EDIT HERE: PROJECT CARD 2]
+                         Modify titles, details, technology tags, and link destinations.
+                         ================================================================= -->
+                    <!-- <article class="project-card glass-card">
+                        <div class="project-image-box">
+                            <div class="project-overlay-gradient"></div>
+                            <div class="project-icon-placeholder purple-glow-bg">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div class="project-badge">AI Integration</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Neural Engine Interface</h3>
+                            <p class="project-desc">
+                                A clean, responsive client interface designed for interacting with artificial intelligence model layers. Provides markdown formatting, rapid code highlighting, and customized chat memory controls.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Figma API</span>
+                                <span class="project-tag">WebSockets</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <a href="#" class="project-link-btn primary-glow-text" target="_blank">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article> -->
+
+                    <!-- =================================================================
+                         [EDIT HERE: PROJECT CARD 3]
+                         Modify titles, details, technology tags, and link destinations.
+                         ================================================================= -->
+                    <!-- <article class="project-card glass-card">
+                        <div class="project-image-box">
+                            <div class="project-overlay-gradient"></div>
+                            <div class="project-icon-placeholder cyan-glow-bg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="project-badge">Security</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Cipher Vault</h3>
+                            <p class="project-desc">
+                                A visual cryptography sandboxed sandbox that encrypts and decrypts character sets using standard mathematical equations. Designed to teach high school students about fundamental encryption.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS Keyframes</span>
+                                <span class="project-tag">Crypto.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-btn" target="_blank">
+                                    <i class="fa-brands fa-github"></i> Source
+                                </a>
+                                <a href="#" class="project-link-btn primary-glow-text" target="_blank">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article> -->
+
+                </div>
+            </div>
+        </section> 
+
+
+        <!-- =================================================================
+             6. CONTACT ME SECTION
+             ================================================================= -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Communications</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Info Column -->
+                    <div class="contact-info-col glass-card">
+                        <h3 class="card-gradient-title"><i class="fa-solid fa-paper-plane"></i> Contact Info</h3>
+                        <p class="contact-subtitle-text">
+                            Have an interesting project proposal, a freelance gig, or just want to chat about futuristic web interfaces? Feel free to reach out to me anytime!
+                        </p>
+
+                        <div class="contact-details-list">
+                            
+                            <!-- =================================================================
+                                 [EDIT HERE: EMAIL ADDRESS]
+                                 ================================================================= -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon cyan-glow-bg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <span>Mail Me</span>
+                                    <!-- Be sure to change both the display text AND the href mailto link -->
+                                    <a href="mailto:shivamtiwari0419@gmail.com" class="detail-value">shivamtiwari0419@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- =================================================================
+                                 [EDIT HERE: PHONE NUMBER]
+                                 ================================================================= -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon purple-glow-bg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <span>Call Me</span>
+                                    <a href="tel:+91 7985469937" class="detail-value">+91 7985469937</a>
+                                </div>
+                            </div>
+
+                            <!-- =================================================================
+                                 [EDIT HERE: COLLEGE / OFFICE ADDRESS]
+                                 ================================================================= -->
+                            <div class="contact-detail-item">
+                                <div class="detail-icon cyan-glow-bg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <span>College Campus</span>
+                                    <span class="detail-value">Hisar,Haryana</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Interactive Form Column -->
+                    <div class="contact-form-col glass-card">
+                        <form id="portfolio-contact-form" class="contact-form">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <input type="text" id="form-name" required placeholder=" ">
+                                    <label for="form-name">Your Name</label>
+                                    <span class="input-focus-bar"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="form-email" required placeholder=" ">
+                                    <label for="form-email">Your Email</label>
+                                    <span class="input-focus-bar"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="form-subject" required placeholder=" ">
+                                <label for="form-subject">Subject</label>
+                                <span class="input-focus-bar"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="form-message" required rows="5" placeholder=" "></textarea>
+                                <label for="form-message">Write Your Message Here...</label>
+                                <span class="input-focus-bar"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit btn-glow">
+                                <span>Transmit Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =================================================================
+         FOOTER
+         ================================================================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <!-- =================================================================
+                 [EDIT HERE: FOOTER COPYRIGHT]
+                 Replace the name or initials with yours.
+                 ================================================================= -->
+            <p class="copyright-text">
+                &copy; 2026 <span class="text-gradient">Shivam Tiwari</span>. All rights reserved . 
+            </p>
+            <div class="footer-meta">
+                <span>Designed from scratch with Vanilla HTML & CSS</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Script sheet for cosmic particle logic and interaction -->
+    <script src="script.js"></script>
+</body>
+</html>
